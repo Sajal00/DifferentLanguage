@@ -1,0 +1,25 @@
+{
+  "as": {
+    "name": "Assamese",
+    "nativeName": "অসমীয়া"
+  },
+
+  "bn": {
+    "name": "Bengali",
+    "nativeName": "বাংলা"
+  },
+  "en": {
+    "name": "English",
+    "nativeName": "English"
+  },
+
+  "hi": {
+    "name": "Hindi",
+    "nativeName": "हिन्दी"
+  },
+
+  "kn": {
+    "name": "Kannada",
+    "nativeName": "ಕನ್ನಡ"
+  }
+}
