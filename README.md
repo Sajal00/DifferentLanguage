@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -44,36 +44,56 @@ yarn ios
 
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## React native multi Language
 
-## Step 3: Modifying your App
+This React Native project is a multilingual mobile application with user authentication and language selection features. It includes a login screen where users can enter their email and mobile number, generate a One-Time Password (OTP), and a home screen where users can change the app's language and sign out.
 
-Now that you have successfully run the app, let's modify it.
+## NPM packages Installation
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+######
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.10.0",
+    "react": "18.2.0",
+    "react-i18next": "^14.1.2",
+    "react-native": "0.74.3",
+    "react-native-gesture-handler": "^2.17.1",
+    "react-native-safe-area-context": "^4.10.7",
+    "react-native-screens": "^3.32.0"
 
-## Congratulations! :tada:
+## Folder Structure
 
-You've successfully run and modified your React Native App. :partying_face:
+      Project Folder==> src
+      src==>1.Languages----------------a.bn.json
+                                       b.en.json
+                                       c.hi.json
+                                       d.kn.json
+            2.Navigator----------------MainNavigator.js
+            3.Screens------------------a.LoginScreen.js
+                                       b.HomeScreen.js
+            4.Services-----------------a.OTPModel.js
+                                       b.i18next.js
+                                       c.languagesList.json
 
-### Now what?
+## Login Screen
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+      a.Email Validation: Ensures the email is in a valid format.
+      b.Mobile Number Validation: Checks if the mobile number is at least 10 digits long.
+      c.OTP Generation: Generates a random 4-digit OTP for user authentication.
+      d.State Management: Manages input values and OTP visibility using React useState.
 
-# Troubleshooting
+## HomeScreen
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+      a.Language Selection: Displays a list of available languages in a modal.
+      b.Sign Out: Navigates the user back to the LoginScreen and resets the language to English.
+      c.Modal Interaction: Shows and hides the language selection modal, providing a list of languages from
+         languageResources.
 
-# Learn More
+## Translation Management
 
-To learn more about React Native, take a look at the following resources:
+       a.The app uses i18next and react-i18next for managing translations.
+       b.Language Resources: Define the available languages and their translations in the languageResources file.
+       c.Change Language: Use the i18next.changeLanguage function to switch between languages dynamically.
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
